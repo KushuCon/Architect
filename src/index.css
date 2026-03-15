@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+
+    --surface: 210 20% 98%;
+    --surface-foreground: 224 71% 4%;
+
+    --card: 210 20% 98%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 98%;
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 100% 96%;
+    --accent-foreground: 221 83% 53%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 0% / 0.06;
+    --input: 0 0% 0% / 0.06;
+    --ring: 221 83% 53%;
+
+    --radius: 6px;
+
+    --log-text: 215 16% 47%;
+
+    --shadow-sm: 0 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.05);
+    --shadow-md: 0 0 0 1px rgba(0,0,0,.08), 0 4px 12px -2px rgba(0,0,0,.06);
+    --shadow-lg: 0 0 0 1px rgba(0,0,0,.05), 0 2px 4px rgba(0,0,0,.05), 0 12px 24px -12px rgba(0,0,0,.1);
+
+    --sidebar-background: 210 20% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 100% 96%;
+    --sidebar-accent-foreground: 221 83% 53%;
+    --sidebar-border: 0 0% 0% / 0.06;
+    --sidebar-ring: 221 83% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Geist', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+  }
+}
+
+@layer components {
+  .label-text {
+    @apply text-xs font-medium uppercase tracking-[0.05em] text-muted-foreground;
+  }
+
+  .display-text {
+    @apply text-[2.5rem] font-bold leading-tight tracking-[-0.04em];
+    text-wrap: balance;
+  }
+
+  .body-text {
+    @apply text-sm leading-relaxed;
+    text-wrap: pretty;
+  }
+
+  .surface-card {
+    @apply bg-surface rounded-md p-6;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .elevated-card {
+    @apply bg-background rounded-md;
+    box-shadow: var(--shadow-md);
+  }
+
+  .search-input {
+    @apply text-xl p-8 bg-background rounded-md w-full outline-none placeholder:text-muted-foreground/50;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .phase-card {
+    @apply bg-surface rounded-md p-6 border-l-2 border-primary;
+  }
+
+  .log-line {
+    @apply font-mono text-xs text-log;
+  }
+}

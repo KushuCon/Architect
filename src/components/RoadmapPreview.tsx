@@ -9,13 +9,13 @@ const cardVariants = {
 };
 
 const sources = [
-  { name: "Designing Data-Intensive Apps", domain: "oreilly.com", type: "book" },
-  { name: "System Design Primer", domain: "github.com", type: "repo" },
-  { name: "MIT 6.824 Distributed Systems", domain: "mit.edu", type: "course" },
-  { name: "Gaurav Sen - System Design", domain: "youtube.com", type: "video" },
-  { name: "ByteByteGo Newsletter", domain: "bytebytego.com", type: "article" },
-  { name: "Martin Kleppmann's Blog", domain: "martin.kleppmann.com", type: "article" },
-  { name: "CAP Theorem Explained", domain: "arxiv.org", type: "paper" },
+  { name: "Designing Data-Intensive Apps", domain: "oreilly.com", type: "book", url: "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/" },
+  { name: "System Design Primer", domain: "github.com", type: "repo", url: "https://github.com/donnemartin/system-design-primer" },
+  { name: "MIT 6.824 Distributed Systems", domain: "mit.edu", type: "course", url: "https://pdos.csail.mit.edu/6.824/" },
+  { name: "Gaurav Sen - System Design", domain: "youtube.com", type: "video", url: "https://www.youtube.com/@gkcs" },
+  { name: "ByteByteGo Newsletter", domain: "bytebytego.com", type: "article", url: "https://blog.bytebytego.com/" },
+  { name: "Martin Kleppmann's Blog", domain: "martin.kleppmann.com", type: "article", url: "https://martin.kleppmann.com/" },
+  { name: "CAP Theorem Explained", domain: "arxiv.org", type: "paper", url: "https://arxiv.org/abs/1909.00774" },
 ];
 
 const phases = [
@@ -85,11 +85,14 @@ const RoadmapPreview = () => {
               </p>
               <div className="space-y-2">
                 {sources.map((source, i) => (
-                  <motion.div
+                  <motion.a
                     key={i}
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
                     variants={cardVariants}
                     transition={transition}
-                    className="surface-card !p-3 cursor-pointer hover:bg-muted transition-colors group"
+                    className="surface-card !p-3 block cursor-pointer hover:bg-muted transition-colors group"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
@@ -106,7 +109,7 @@ const RoadmapPreview = () => {
                         {source.type}
                       </span>
                     </div>
-                  </motion.div>
+                  </motion.a>
                 ))}
               </div>
             </div>

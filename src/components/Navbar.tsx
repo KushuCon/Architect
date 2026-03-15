@@ -11,8 +11,8 @@ const Navbar = () => {
           <span className="font-semibold text-sm tracking-tight">Architect</span>
         </div>
         <div className="flex items-center gap-6">
-          <span className="label-text cursor-pointer hover:text-foreground transition-colors">How it works</span>
-          <span className="label-text cursor-pointer hover:text-foreground transition-colors">Features</span>
+          <span className="label-text cursor-pointer hover:text-foreground transition-colors"></span>
+          <span className="label-text cursor-pointer hover:text-foreground transition-colors"></span>
           <button className="text-xs font-medium bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
             Start Researching
           </button>
